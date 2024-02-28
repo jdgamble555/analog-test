@@ -24,7 +24,3 @@ export default async function render(url: string, document: string) {
 
   return html;
 }
-
-export const config = {
-  runtime: 'edge',
-};

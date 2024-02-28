@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -48,8 +49,11 @@ export default class HomeComponent {
   edge = false;
 
   constructor() {
-    if ((globalThis as any).EdgeRuntime) {
+   /* if ((globalThis as any).EdgeRuntime) {
       this.edge = true;
+    }*/
+    if (typeof EdgeRuntime === 'string') {
+      this.edge =true;
     }
   }
 
