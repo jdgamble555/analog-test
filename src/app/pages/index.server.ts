@@ -8,7 +8,7 @@ export const load = async ({
     event, // full request event
 }: PageServerLoad) => {
 
-    const edge = !!((globalThis as any).EdgeRuntime); 
+    const edge = !!((globalThis as any)?.EdgeRuntime); 
 
     return {
         edge,
