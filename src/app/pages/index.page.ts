@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-test',
+  selector: 'app-home',
   standalone: true,
   template: `
     <div>
@@ -12,7 +12,7 @@ import { Component } from '@angular/core';
 
     <h2>Analog</h2>
 
-    <h3>The fullstack meta-framework for Angular2!</h3>
+    <h3>The fullstack meta-framework for Angular2! </h3>
 
     <p>Is Edge? {{ edge }}</p>
 
@@ -42,7 +42,7 @@ import { Component } from '@angular/core';
     `,
   ],
 })
-export default class TestComponent {
+export default class HomeComponent {
   count = 0;
 
   edge = false;
