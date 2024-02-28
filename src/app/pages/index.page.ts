@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
 
-export const config = {
-  runtime: 'edge',
-};
-
 @Component({
   selector: 'app-home',
   standalone: true,

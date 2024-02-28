@@ -5,7 +5,7 @@ import { enableProdMode } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { renderApplication } from '@angular/platform-server';
 
-import { config } from './app/app.config.server';
+import { config as appConfig } from './app/app.config.server';
 import { AppComponent } from './app/app.component';
 
 if (import.meta.env.PROD) {
@@ -13,7 +13,7 @@ if (import.meta.env.PROD) {
 }
 
 export function bootstrap() {
-  return bootstrapApplication(AppComponent, config);
+  return bootstrapApplication(AppComponent, appConfig);
 }
 
 export default async function render(url: string, document: string) {
@@ -24,3 +24,7 @@ export default async function render(url: string, document: string) {
 
   return html;
 }
+
+export const config = {
+  runtime: 'edge',
+};
