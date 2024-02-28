@@ -16,7 +16,7 @@ import { LoadResult } from '@analogjs/router';
 
     <h3>The fullstack meta-framework for Angular2! </h3>
 
-    <p>Is Edge? {{ data.edge }}</p>
+    <p>Loaded: {{ data.loaded }}</p>
 
     <div class="card">
       <button type="button" (click)="increment()">Count {{ count }}</button>
@@ -48,11 +48,11 @@ export default class HomeComponent {
 
   count = 0;
 
-  data!: LoadResult<typeof load>;
-
   @Input() load(data: LoadResult<typeof load>) {
     this.data = data;
   }
+
+  data!: LoadResult<typeof load>;
 
   increment() {
     this.count++;
