@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-test',
   standalone: true,
   template: `
     <div>
@@ -10,9 +10,9 @@ import { Component } from '@angular/core';
       </a>
     </div>
 
-    <h2>Analog Deployed?</h2>
+    <h2>Analog</h2>
 
-    <h3>The fullstack meta-framework for Angular!</h3>
+    <h3>The fullstack meta-framework for Angular2!</h3>
 
     <div class="card">
       <button type="button" (click)="increment()">Count {{ count }}</button>
@@ -40,7 +40,7 @@ import { Component } from '@angular/core';
     `,
   ],
 })
-export default class HomeComponent {
+export default class TestComponent {
   count = 0;
 
   increment() {
