@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { load } from './index.server';
+import { LoadResult, injectLoad } from '@analogjs/router';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -15,7 +19,7 @@ import { Component } from '@angular/core';
 
     <h3>The fullstack meta-framework for Angular2! </h3>
 
-    <p>Is Edge? {{ edge }}</p>
+    <p>Is Edge? {{ data().edge }}</p>
 
     <div class="card">
       <button type="button" (click)="increment()">Count {{ count }}</button>
@@ -44,20 +48,14 @@ import { Component } from '@angular/core';
   ],
 })
 export default class HomeComponent {
+
+  data = toSignal(injectLoad<typeof load>(), { requireSync: true });
   count = 0;
-
-  edge = false;
-
-  constructor() {
-   /* if ((globalThis as any).EdgeRuntime) {
-      this.edge = true;
-    }*/
-    if (typeof EdgeRuntime === 'string') {
-      this.edge =true;
-    }
-  }
 
   increment() {
     this.count++;
   }
 }
+
+
+
