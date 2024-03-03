@@ -1,13 +1,5 @@
-import { PageServerLoad } from "@analogjs/router";
-
-export const load = async ({
-
-}: PageServerLoad) => {
-
-    const edge = !!((globalThis as any)?.EdgeRuntime); 
-
+export const load = async () => {
     return {
-        loaded: true,
-        edge
+        data: 'Random Number From Server: ' + Math.random()
     };
 };
